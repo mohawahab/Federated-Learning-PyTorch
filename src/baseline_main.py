@@ -89,8 +89,9 @@ if __name__ == '__main__':
     plt.plot(range(len(epoch_loss)), epoch_loss)
     plt.xlabel('epochs')
     plt.ylabel('Train loss')
-    plt.savefig('../save/nn_{}_{}_{}.png'.format(args.dataset, args.model,
-                                                 args.epochs))
+    fig_file = './save/nn_{}_{}_{}.png'.format(args.dataset, args.model,
+                                                 args.epochs)
+    plt.savefig(fig_file)
 
     # testing
     test_acc, test_loss = test_inference(args, global_model, test_dataset)
